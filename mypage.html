@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Toggle on Click</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        img {
+            width: 100vw;       /* Full width of screen */
+            height: auto;       /* Maintain aspect ratio */
+            max-height: 100vh;  /* Avoid vertical overflow */
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <img id="myImage" src="image1.jpg" alt="Tap to change image" onclick="toggleImage()">
+
+    <script>
+        let current = 1;
+        function toggleImage() {
+            const img = document.getElementById("myImage");
+            img.src = current === 1 ? "image2.jpg" : "image1.jpg";
+            current = current === 1 ? 2 : 1;
+        }
+    </script>
+
+</body>
+</html>
